@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <h1>Happy Independence Day <span id="change">2024</span></h1>
+        <video src="vid.mp4"  muted autoplay loop type="mp4">Video</video>
+
+        <audio id="myAudio" loop>
+            <source src="aud.mp3"  type="audio/mp3" >
+            <source src="aud.mp3" type="audio/ogg">
+        </audio>
+        <!-- <audio src="aud.mp3" type="audio/mp3"></audio> -->
+    </section>
+
+    <script>
+        window.onload = function() {
+            var audio = document.getElementById('myAudio');
+    
+            // Try to play the audio automatically
+            var playPromise = audio.play();
+    
+            // If the play method returns a promise, catch any errors
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    console.log("Audio is playing automatically.");
+                }).catch(error => {
+                    console.error("Autoplay was prevented by the browser:", error);
+                });
+            }
+        };
+    </script>
+
+
+
+
+
+
+    <!-- <script>
+        document.body.addEventListener('click', function(play) {
+            var audio = document.getElementById('myAudio');
+            audio.play();
+        });  
+    </script> -->
+    
+</body>
+</html>
